@@ -3,66 +3,97 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>ResumeAI — Free Resume Builder</title>
-  <meta name="description" content="Build a professional resume instantly. Free, no signup, no API needed."/>
+  <title>ResumeAI — Free Resume Builder for All Students</title>
+  <meta name="description" content="Free resume builder for all students — IT, Commerce, Arts, Science, MBA, 12th pass. No signup needed."/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<!-- ========== LANDING ========== -->
+<!-- LANDING -->
 <div id="page-landing">
   <nav>
     <div class="nav-logo">Resume<span>AI</span></div>
     <button class="nav-cta" onclick="showBuilder()">Build Free Resume →</button>
   </nav>
-
   <section class="hero">
-    <div class="hero-badge">⚡ No API • No Signup • Instant PDF</div>
-    <h1>Professional resume<br/><em>in 2 minutes</em></h1>
-    <p>Fill your details — smart templates instantly create a job-winning resume. Download as PDF for free.</p>
+    <div class="hero-badge">⚡ Free • No Signup • Works for All Fields</div>
+    <h1>Professional resume<br/><em>for every student</em></h1>
+    <p>IT, Commerce, Arts, Science, MBA, 12th pass — fill your details and get a job-winning resume in minutes. Free PDF download!</p>
     <div class="hero-btns">
       <button class="btn-hero-primary" onclick="showBuilder()">Build My Resume — Free</button>
       <button class="btn-hero-ghost" onclick="document.querySelector('.features').scrollIntoView({behavior:'smooth'})">See features ↓</button>
     </div>
   </section>
 
+  <!-- Field badges -->
+  <div class="field-badges">
+    <span>💻 IT / Software</span><span>📊 BCom / Accounts</span><span>📈 BBA / MBA</span>
+    <span>🎨 BA / Arts</span><span>🔬 BSc / Science</span><span>🏥 Medical / Nursing</span>
+    <span>⚖️ Law / LLB</span><span>📚 BEd / Teaching</span><span>🎓 12th Pass</span>
+  </div>
+
   <div class="features">
-    <div class="feat"><div class="feat-icon">⚡</div><h3>No API Needed</h3><p>Works completely offline after loading. No internet required.</p></div>
+    <div class="feat"><div class="feat-icon">🌟</div><h3>All Fields Supported</h3><p>IT, Commerce, Arts, Science, MBA, Medical, Law, Teaching — custom content for every field.</p></div>
     <div class="feat"><div class="feat-icon">🎨</div><h3>3 Pro Templates</h3><p>Modern, Executive, Minimal — all recruiter-friendly designs.</p></div>
     <div class="feat"><div class="feat-icon">📄</div><h3>PDF Download</h3><p>1-click A4 PDF. Works on all browsers and mobile.</p></div>
-    <div class="feat"><div class="feat-icon">✍️</div><h3>Smart Sentences</h3><p>Auto-generates professional bullet points from your inputs.</p></div>
-    <div class="feat"><div class="feat-icon">🇮🇳</div><h3>Made for India</h3><p>Perfect for freshers, IT, MBA, and all job roles.</p></div>
+    <div class="feat"><div class="feat-icon">✍️</div><h3>Smart Content</h3><p>Auto-generates professional summaries and bullets from your inputs.</p></div>
+    <div class="feat"><div class="feat-icon">🇮🇳</div><h3>Made for India</h3><p>Hinglish input supported. Tailored for Indian job market.</p></div>
     <div class="feat"><div class="feat-icon">🔒</div><h3>100% Private</h3><p>Everything runs in your browser. Zero data stored.</p></div>
   </div>
 </div>
 
-<!-- ========== BUILDER ========== -->
+<!-- BUILDER -->
 <div id="page-builder">
   <div class="builder-nav">
     <div class="nav-logo">Resume<span>AI</span></div>
     <button class="back-btn" onclick="showLanding()">← Back</button>
   </div>
-
   <div class="builder-wrap">
+
     <!-- Progress -->
     <div class="progress-bar">
-      <div class="prog-step active" id="pb-0"><div class="prog-dot">1</div><div class="prog-label">Personal</div></div>
-      <div class="prog-step" id="pb-1"><div class="prog-dot">2</div><div class="prog-label">Experience</div></div>
-      <div class="prog-step" id="pb-2"><div class="prog-dot">3</div><div class="prog-label">Education</div></div>
-      <div class="prog-step" id="pb-3"><div class="prog-dot">4</div><div class="prog-label">Skills</div></div>
-      <div class="prog-step" id="pb-4"><div class="prog-dot">5</div><div class="prog-label">Template</div></div>
-      <div class="prog-step" id="pb-5"><div class="prog-dot">6</div><div class="prog-label">Result</div></div>
+      <div class="prog-step active" id="pb-0"><div class="prog-dot">1</div><div class="prog-label">Field</div></div>
+      <div class="prog-step" id="pb-1"><div class="prog-dot">2</div><div class="prog-label">Personal</div></div>
+      <div class="prog-step" id="pb-2"><div class="prog-dot">3</div><div class="prog-label">Experience</div></div>
+      <div class="prog-step" id="pb-3"><div class="prog-dot">4</div><div class="prog-label">Projects</div></div>
+      <div class="prog-step" id="pb-4"><div class="prog-dot">5</div><div class="prog-label">Education</div></div>
+      <div class="prog-step" id="pb-5"><div class="prog-dot">6</div><div class="prog-label">Skills</div></div>
+      <div class="prog-step" id="pb-6"><div class="prog-dot">7</div><div class="prog-label">Template</div></div>
+      <div class="prog-step" id="pb-7"><div class="prog-dot">8</div><div class="prog-label">Result</div></div>
     </div>
 
-    <!-- Step 0: Personal -->
+    <!-- Step 0: Field Selection -->
     <div id="s0">
+      <div class="card">
+        <div class="card-title"><span>🌟</span> Apna Field Select Karo</div>
+        <p class="step-hint">Field select karne se resume content automatically us field ke hisaab se tailor ho jaayega.</p>
+        <div class="field-grid" id="field-grid">
+          <div class="field-card selected" id="fc-it"        onclick="selectField('it')">        <div class="fc-icon">💻</div><div class="fc-label">IT / Software</div><div class="fc-sub">Developer, QA, Data Analyst</div></div>
+          <div class="field-card" id="fc-commerce"   onclick="selectField('commerce')">   <div class="fc-icon">📊</div><div class="fc-label">Commerce / BCom</div><div class="fc-sub">Accountant, Finance, Tally</div></div>
+          <div class="field-card" id="fc-management" onclick="selectField('management')"> <div class="fc-icon">📈</div><div class="fc-label">BBA / MBA</div><div class="fc-sub">Marketing, HR, Sales, Operations</div></div>
+          <div class="field-card" id="fc-arts"       onclick="selectField('arts')">       <div class="fc-icon">🎨</div><div class="fc-label">BA / Arts</div><div class="fc-sub">Writer, Teacher, Designer, Journalist</div></div>
+          <div class="field-card" id="fc-science"    onclick="selectField('science')">    <div class="fc-icon">🔬</div><div class="fc-label">BSc / Science</div><div class="fc-sub">Lab Tech, Research, Data Science</div></div>
+          <div class="field-card" id="fc-medical"    onclick="selectField('medical')">    <div class="fc-icon">🏥</div><div class="fc-label">Medical / Nursing</div><div class="fc-sub">Nurse, Pharmacist, Lab Tech</div></div>
+          <div class="field-card" id="fc-law"        onclick="selectField('law')">        <div class="fc-icon">⚖️</div><div class="fc-label">Law / LLB</div><div class="fc-sub">Advocate, Legal Assistant, Paralegal</div></div>
+          <div class="field-card" id="fc-teaching"   onclick="selectField('teaching')">   <div class="fc-icon">📚</div><div class="fc-label">Teaching / BEd</div><div class="fc-sub">Teacher, Tutor, Educator</div></div>
+          <div class="field-card" id="fc-fresher12"  onclick="selectField('fresher12')">  <div class="fc-icon">🎓</div><div class="fc-label">12th Pass / Any</div><div class="fc-sub">Data Entry, Sales, Support, Office</div></div>
+          <div class="field-card" id="fc-other"      onclick="selectField('other')">      <div class="fc-icon">🌟</div><div class="fc-label">Other / Custom</div><div class="fc-sub">Any field not listed above</div></div>
+        </div>
+      </div>
+      <div class="nav-btns"><span></span><button class="btn-next" onclick="go(1)">Next →</button></div>
+    </div>
+
+    <!-- Step 1: Personal -->
+    <div id="s1" style="display:none">
       <div class="card">
         <div class="card-title"><span>👤</span> Personal Information</div>
         <div class="row">
           <div class="field"><label>Full Name *</label><input id="f-name" placeholder="Rahul Sharma"/></div>
-          <div class="field"><label>Target Job Title *</label><input id="f-role" placeholder="Software Engineer"/></div>
+          <div class="field"><label>Target Job Title *</label><input id="f-role" placeholder=""/></div>
         </div>
+        <!-- Suggested roles -->
+        <div id="role-suggestions" class="suggestions-wrap"></div>
         <div class="row">
           <div class="field"><label>Email *</label><input id="f-email" type="email" placeholder="rahul@gmail.com"/></div>
           <div class="field"><label>Phone</label><input id="f-phone" placeholder="+91 98765 43210"/></div>
@@ -71,7 +102,8 @@
           <div class="field"><label>City / Location</label><input id="f-city" placeholder="Delhi, India"/></div>
           <div class="field"><label>LinkedIn / Portfolio</label><input id="f-link" placeholder="linkedin.com/in/rahul"/></div>
         </div>
-        <div class="row full">
+        <div class="row">
+          <div class="field"><label>GitHub / Website (optional)</label><input id="f-github" placeholder="github.com/rahul"/></div>
           <div class="field"><label>Years of Experience</label>
             <select id="f-exp-years">
               <option value="fresher">Fresher (0 years)</option>
@@ -85,29 +117,19 @@
           </div>
         </div>
       </div>
-      <div class="nav-btns"><span></span><button class="btn-next" onclick="go(1)">Next →</button></div>
-    </div>
-
-    <!-- Step 1: Experience -->
-    <div id="s1" style="display:none">
-      <div class="card">
-        <div class="card-title"><span>💼</span> Work Experience</div>
-        <p class="step-hint">Tip: Simple words mein likho — automatically professional banega.</p>
-        <div id="exp-list"></div>
-        <button class="add-row-btn" onclick="addExp()">+ Add Another Experience</button>
-      </div>
       <div class="nav-btns">
         <button class="btn-back" onclick="go(0)">← Back</button>
         <button class="btn-next" onclick="go(2)">Next →</button>
       </div>
     </div>
 
-    <!-- Step 2: Education -->
+    <!-- Step 2: Experience -->
     <div id="s2" style="display:none">
       <div class="card">
-        <div class="card-title"><span>🎓</span> Education</div>
-        <div id="edu-list"></div>
-        <button class="add-row-btn" onclick="addEdu()">+ Add Another Education</button>
+        <div class="card-title"><span>💼</span> Work Experience</div>
+        <p class="step-hint" id="exp-hint">Simple words mein likho — automatically professional banega. Fresher hain toh khali chhod sakte ho.</p>
+        <div id="exp-list"></div>
+        <button class="add-row-btn" onclick="addExp()">+ Add Another Experience</button>
       </div>
       <div class="nav-btns">
         <button class="btn-back" onclick="go(1)">← Back</button>
@@ -115,27 +137,13 @@
       </div>
     </div>
 
-    <!-- Step 3: Skills -->
+    <!-- Step 3: Projects -->
     <div id="s3" style="display:none">
       <div class="card">
-        <div class="card-title"><span>⚡</span> Skills & Info</div>
-        <div class="row full">
-          <div class="field">
-            <label>Skills <em class="hint">(Enter ya comma ke baad add hoga)</em></label>
-            <input class="skill-tag-input" id="skill-inp" placeholder="JavaScript, React, MS Excel..." onkeydown="addSkill(event)"/>
-            <div class="tags-wrap" id="skill-tags"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="field"><label>Languages Known</label><input id="f-langs" placeholder="Hindi, English"/></div>
-          <div class="field"><label>Certifications</label><input id="f-certs" placeholder="AWS, Google Analytics..."/></div>
-        </div>
-        <div class="row full">
-          <div class="field">
-            <label>Key Achievement / Project <em class="hint">(optional)</em></label>
-            <textarea id="f-extra" placeholder="Won hackathon, built app with 500 users, increased sales by 30%..."></textarea>
-          </div>
-        </div>
+        <div class="card-title"><span>🚀</span> Projects <em class="hint" style="font-size:.8rem">(optional)</em></div>
+        <p class="step-hint">College projects, personal projects, freelance work — sab add kar sakte ho.</p>
+        <div id="proj-list"></div>
+        <button class="add-row-btn" onclick="addProj()">+ Add Project</button>
       </div>
       <div class="nav-btns">
         <button class="btn-back" onclick="go(2)">← Back</button>
@@ -143,82 +151,103 @@
       </div>
     </div>
 
-    <!-- Step 4: Template -->
+    <!-- Step 4: Education -->
     <div id="s4" style="display:none">
+      <div class="card">
+        <div class="card-title"><span>🎓</span> Education</div>
+        <div id="edu-list"></div>
+        <button class="add-row-btn" onclick="addEdu()">+ Add Another Education</button>
+      </div>
+      <div class="nav-btns">
+        <button class="btn-back" onclick="go(3)">← Back</button>
+        <button class="btn-next" onclick="go(5)">Next →</button>
+      </div>
+    </div>
+
+    <!-- Step 5: Skills -->
+    <div id="s5" style="display:none">
+      <div class="card">
+        <div class="card-title"><span>⚡</span> Skills & Info</div>
+        <!-- Suggested skills for field -->
+        <div class="row full">
+          <div class="field">
+            <label>Skills <em class="hint">(Enter ya comma ke baad add hoga)</em></label>
+            <input class="skill-tag-input" id="skill-inp" placeholder="" onkeydown="addSkill(event)"/>
+            <div class="tags-wrap" id="skill-tags"></div>
+          </div>
+        </div>
+        <div id="skill-suggestions-wrap" style="margin-bottom:1rem"></div>
+        <div class="row">
+          <div class="field"><label>Languages Known</label><input id="f-langs" placeholder="Hindi, English"/></div>
+          <div class="field"><label>Certifications</label><input id="f-certs" placeholder=""/></div>
+        </div>
+        <div class="row full">
+          <div class="field">
+            <label>Achievements <em class="hint">(optional — comma se alag karo)</em></label>
+            <textarea id="f-extra" placeholder=""></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="nav-btns">
+        <button class="btn-back" onclick="go(4)">← Back</button>
+        <button class="btn-next" onclick="go(6)">Next →</button>
+      </div>
+    </div>
+
+    <!-- Step 6: Template -->
+    <div id="s6" style="display:none">
       <div class="card">
         <div class="card-title"><span>🎨</span> Choose Template</div>
         <div class="template-grid">
           <div class="tmpl-card selected" id="tc-modern" onclick="selectTpl('modern')">
             <div class="tmpl-preview tmpl-modern-prev">
-              <div class="tp-name-bar"></div>
-              <div class="tp-role-bar"></div>
-              <div class="tp-body-row">
-                <div class="tp-sidebar"></div>
-                <div class="tp-main-col">
-                  <div class="tp-line"></div>
-                  <div class="tp-line short"></div>
-                  <div class="tp-line"></div>
-                </div>
-              </div>
+              <div class="tp-name-bar"></div><div class="tp-role-bar"></div>
+              <div class="tp-body-row"><div class="tp-sidebar"></div><div class="tp-main-col"><div class="tp-line"></div><div class="tp-line short"></div><div class="tp-line"></div></div></div>
             </div>
-            <div class="tmpl-name">Modern Blue</div>
-            <div class="tmpl-desc">Bold & contemporary</div>
+            <div class="tmpl-name">Modern Blue</div><div class="tmpl-desc">Bold & contemporary</div>
           </div>
           <div class="tmpl-card" id="tc-exec" onclick="selectTpl('exec')">
             <div class="tmpl-preview tmpl-exec-prev">
-              <div class="tp-center-name"></div>
-              <div class="tp-divider"></div>
-              <div class="tp-line"></div>
-              <div class="tp-line short"></div>
-              <div class="tp-line"></div>
+              <div class="tp-center-name"></div><div class="tp-divider"></div>
+              <div class="tp-line"></div><div class="tp-line short"></div><div class="tp-line"></div>
             </div>
-            <div class="tmpl-name">Executive Classic</div>
-            <div class="tmpl-desc">Elegant & traditional</div>
+            <div class="tmpl-name">Executive Classic</div><div class="tmpl-desc">Elegant & traditional</div>
           </div>
           <div class="tmpl-card" id="tc-minimal" onclick="selectTpl('minimal')">
             <div class="tmpl-preview tmpl-minimal-prev">
-              <div class="tp-min-top">
-                <div class="tp-min-name"></div>
-                <div class="tp-min-contact"></div>
-              </div>
+              <div class="tp-min-top"><div class="tp-min-name"></div><div class="tp-min-contact"></div></div>
               <div class="tp-divider dark"></div>
-              <div class="tp-line"></div>
-              <div class="tp-line short"></div>
-              <div class="tp-line"></div>
+              <div class="tp-line"></div><div class="tp-line short"></div><div class="tp-line"></div>
             </div>
-            <div class="tmpl-name">Minimal Clean</div>
-            <div class="tmpl-desc">Simple & distraction-free</div>
+            <div class="tmpl-name">Minimal Clean</div><div class="tmpl-desc">Simple & distraction-free</div>
           </div>
         </div>
       </div>
       <div class="nav-btns">
-        <button class="btn-back" onclick="go(3)">← Back</button>
+        <button class="btn-back" onclick="go(5)">← Back</button>
         <button class="btn-gen" onclick="buildResume()">✨ Generate Resume</button>
       </div>
     </div>
 
-    <!-- Step 5: Result -->
-    <div id="s5" style="display:none">
+    <!-- Step 7: Result -->
+    <div id="s7" style="display:none">
       <div class="result-header">
         <div class="result-title">Your Resume is Ready! 🎉</div>
         <div class="action-btns">
           <button class="btn-pdf" onclick="downloadPDF()">⬇ Download PDF</button>
           <button class="btn-copy" onclick="copyText()">Copy Text</button>
-          <button class="btn-outline" onclick="go(4)">Change Template</button>
+          <button class="btn-outline" onclick="go(6)">Change Template</button>
           <button class="btn-outline" onclick="go(0)">Edit Info</button>
         </div>
       </div>
-      <div class="resume-wrap">
-        <div id="resume-render"></div>
-      </div>
+      <div class="resume-wrap"><div id="resume-render"></div></div>
     </div>
+
   </div>
 </div>
 
-<!-- Print Area — PDF ke liye -->
 <div id="print-area"></div>
 <div class="toast" id="toast"></div>
-
 <script src="js/content.js"></script>
 <script src="js/templates.js"></script>
 <script src="js/app.js"></script>
