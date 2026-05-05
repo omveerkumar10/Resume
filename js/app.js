@@ -21,6 +21,8 @@ function selectField(f) {
   selectedField = f;
   document.querySelectorAll('.field-card').forEach(el => el.classList.remove('selected'));
   document.getElementById('fc-' + f).classList.add('selected');
+  // Auto-advance to next step after short delay (so user sees selection)
+  setTimeout(() => go(1), 200);
 }
 
 /* ============ PAGE ============ */
@@ -34,6 +36,26 @@ function showBuilder() {
 function showLanding() {
   document.getElementById('page-builder').style.display = 'none';
   document.getElementById('page-landing').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* quickStart — badge click se seedha builder open + field pre-select */
+function quickStart(field) {
+  // Pre-select the field
+  selectedField = field;
+
+  // Open builder
+  showBuilder();
+
+  // Highlight correct field card
+  document.querySelectorAll('.field-card').forEach(el => el.classList.remove('selected'));
+  const fc = document.getElementById('fc-' + field);
+  if (fc) fc.classList.add('selected');
+
+  // Update placeholders for that field
+  updateFieldPlaceholders();
+
+  // Scroll to top
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 

@@ -1,6 +1,8 @@
 /* ---- Field Cards ---- */
 .field-badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 860px; margin: 0 auto 2rem; padding: 0 2rem; }
 .field-badges span { background: var(--brand-light); color: var(--brand); font-size: .8rem; font-weight: 500; padding: .35rem .9rem; border-radius: 999px; border: 1px solid #bfdbfe; }
+.field-badge-btn { background: var(--brand-light); color: var(--brand); font-size: .82rem; font-weight: 500; padding: .4rem 1rem; border-radius: 999px; border: 1.5px solid #bfdbfe; cursor: pointer; transition: all .2s; font-family: inherit; }
+.field-badge-btn:hover { background: var(--brand); color: #fff; border-color: var(--brand); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,.25); }
 
 .field-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
 .field-card { border: 2px solid var(--border); border-radius: var(--radius); padding: 1rem; cursor: pointer; transition: all .2s; text-align: center; }
